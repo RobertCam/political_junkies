@@ -1,10 +1,8 @@
 ul {
   list-style-type: none;
-
 }
 
-div.sponsors-row {
-  margin-top: 17.5%;
+div {
   text-align: center;
 }
 
@@ -12,9 +10,18 @@ div ul.sponsors-row{
   list-style-type: none 
 }
 
+div.sponsors-row {
+  margin-top: 17.5%;
+}
+
 div.top-row {
-  margin-top: 5%;
-  text-align: center;
+  margin-top: 2.5%;
+
+}
+
+h1.big_numbers{
+  font-weight: 900;
+
 }
 
 nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
