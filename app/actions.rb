@@ -3,9 +3,6 @@ get '/' do
   erb :index
 end
 
-get '/' do
- erb :index
-end
 
 get '/candidates/show' do
  erb :'candidates/show'
