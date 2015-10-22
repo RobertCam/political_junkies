@@ -1,6 +1,8 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
+gem 'opensecrets'
+
 gem 'rake'
 gem 'activesupport'
 

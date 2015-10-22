@@ -1,4 +1,6 @@
 require 'rubygems'
+require 'opensecrets'
+require 'pp'
 require 'bundler/setup'
 
 require 'active_support/all'
