@@ -11,13 +11,37 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="nav navbar-nav navbar-right">
+
+      <!-- drop down for repub candidates -->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i> Candidates <span class="badge">0</span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i> Republican Candidates <span class="badge">15</span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#"><i class="fa fa-fw fa-tag"></i> <span class="badge">Music</span> sayfası <span class="badge">Video</span> sayfasında etiketlendi</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Music</span> sayfasında iletiniz beğenildi</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Video</span> sayfasında iletiniz beğenildi</a></li>
-            <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Game</span> sayfasında iletiniz beğenildi</a></li>
+            <li><a href="/candidates/show/<%= PILOSI %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Nancy Pilosi</a></li>
+            <li><a href="/candidates/show/<%= BUSH %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Jeb Bush</a></li>
+            <li><a href="/candidates/show/<%= TRUMP %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Ben Carson</a></li>
+            <li><a href="/candidates/show/<%= CHRISTIE %>"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">REP</span> Chris Christie</a></li>
+            <li><a href="/candidates/show/<%= CRUZ %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Ted Cruz</a></li>
+            <li><a href="/candidates/show/<%= FIORINA %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Carly Fiorina</a></li>
+            <li><a href="/candidates/show/<%= GILMORE %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Jim Gilmore</a></li>
+            <li><a href="/candidates/show/<%= GRAHAM %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Lindsey Graham</a></li>
+            <li><a href="/candidates/show/<%= HUCKABEE %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Mike Huckabee</a></li>
+            <li><a href="/candidates/show/<%= JINDAL %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Bobby Jindal</a></li>
+            <li><a href="/candidates/show/<%= KASICH %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> John Kasich</a></li>
+            <li><a href="/candidates/show/<%= PATAKI %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> George Pataki</a></li>
+            <li><a href="/candidates/show/<%= PAUL %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Rand Paul</a></li>
+            <li><a href="/candidates/show/<%= RUBIO %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Marco Rubio</a></li>
+            <li><a href="/candidates/show/<%= SANTORUM %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Rick Santorum</a></li>
+          </ul>
+
+          <!-- second drop down for demo candidates -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i> Democratic Candidates <span class="badge">0</span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/candidates/show/<%= SANDERS %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Bernie Sanders</a></li>
+            <li><a href="/candidates/show/<%= CHAFEE %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Lincoln Chafee</a></li>
+            <li><a href="/candidates/show/<%= CLINTON %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Clinton Hilary</a></li>
+            <li><a href="/candidates/show/<%= LESSIG %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Lawrence Lessig</a></li>
+            <li><a href="/candidates/show/<%= OMALLEY %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Martin O'Malley</a></li>
           </ul>
         </li>
         <li class="active"><a href="#">Ana Sayfa <span class="sr-only">(current)</span></a></li>
@@ -32,9 +56,6 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-right search-form" role="search">
-        <input type="text" class="form-control" placeholder="Search" />
-      </form>
     </div>
   </div>
 </nav>

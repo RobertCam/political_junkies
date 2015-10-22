@@ -10,27 +10,39 @@
   <div class="row">
     <div class="col-sm-4 sponsors-row">
       <h4>By sector</h4>
-      <% @cand_sec["sector"].each do |sec| %>
-        <ul>
-          <li><%= sec["sector_name"] %>
-        </ul>
+      <% if @cand_sec.kind_of?(Array) %>
+        <% @cand_sec["sector"].each do |sec| %>
+          <ul>
+            <li><%= sec["sector_name"] %>
+          </ul>
+        <% end %>
+      <% else %>
+        <%= @cand_sec["sector"]["sector_name"] %>
       <% end %>
     </div>
     <div class="col-sm-4 sponsors-row">
       <h2>Sponsors</h2><br><br>
       <h4>By contributor</h4>
-      <% @cand_con["contributor"].each do |con| %>
-        <ul>
-          <li><%= con["org_name"] %></li> 
-        </ul>
+      <% if @cand_sec.kind_of?(Array) %>
+        <% @cand_con["contributor"].each do |con| %>
+          <ul>
+            <li><%= con["org_name"] %></li> 
+          </ul>
+        <% end %>
+      <% else %>
+        <%= @cand_con["contributor"]["org_name"] %>
       <% end %>
     </div>
     <div class="col-sm-4 sponsors-row">
       <h4>By industry</h4>
-      <% @cand_ind["industry"].each do |ind| %>
-        <ul>
-          <li><%= ind["industry_name"] %></li>
-        </ul>
+      <% if @cand_sec.kind_of?(Array) %>
+        <% @cand_ind["industry"].each do |ind| %>
+          <ul>
+            <li><%= ind["industry_name"] %></li>
+          </ul>
+        <% end %>
+      <% else %>
+        <%= @cand_con["contributor"]["org_name"] %>
       <% end %>
     </div>
   </div>
