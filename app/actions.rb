@@ -1,4 +1,5 @@
 #just to test for getting data on the 'candidates/show erb'
+<<<<<<< HEAD
 
 # REPUBLICAN CANDIDATES
 PILOSI = 'N00007360'
@@ -28,6 +29,22 @@ SANDERS = 'N00000528'
 
 #INDEPENDANT CANDIDATES
 STEIN = 'N00033776'
+
+helpers do
+
+  def extract_amounts(cand_type)
+    total = 0
+    sum_pac = 0
+    sum_indiv = 0
+    
+    cand_type.each do |org|
+      total += org["total"].to_i
+      sum_pac += org["pacs"].to_i 
+      sum_indiv += org["indivs"].to_i
+    end
+    [sum_pac, sum_indiv, total]
+end
+
 
 #landing page (aka home page)
 get '/' do
