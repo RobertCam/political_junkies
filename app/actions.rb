@@ -42,8 +42,8 @@ helpers do
       sum_indiv += org["indivs"].to_i
     end
     [sum_pac, sum_indiv, total]
+  end
 end
-
 
 #landing page (aka home page)
 get '/' do
@@ -59,21 +59,17 @@ get '/candidates/show/:id' do
 
   cand_con = candidate.contributors({:cid => params[:id]})["response"]
   @cand_con = cand_con["contributors"]
-  
+  @cand_con_extract = extract_amounts(@cand_con["contributor"])
 
   cand_ind = candidate.industries({:cid => params[:id]})["response"]
   @cand_ind = cand_ind["industries"]
+  @cand_ind_extract = extract_amounts(@cand_ind["industry"])
 
   cand_sec = candidate.sector({:cid => params[:id]})["response"]
   @cand_sec = cand_sec["sectors"]
-<<<<<<< HEAD
-=======
   @cand_sec_extract = extract_amounts(@cand_sec["sector"])
 
   @received_don_total = @cand_con_extract[2] + @cand_ind_extract[2] + @cand_sec_extract[2]
-  erb :'candidates/show'
->>>>>>> rob_p
-
   erb :'candidates/show'
 end
 
