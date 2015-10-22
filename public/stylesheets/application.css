@@ -1,15 +1,20 @@
-<<<<<<< HEAD
-body {
-  text-align: center;
-}
-
 ul {
   list-style-type: none;
 
 }
 
-div.sponsors {
+div.sponsors-row {
   margin-top: 17.5%;
+  text-align: center;
+}
+
+div ul.sponsors-row{
+  list-style-type: none 
+}
+
+div.top-row {
+  margin-top: 5%;
+  text-align: center;
 }
 
 nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
