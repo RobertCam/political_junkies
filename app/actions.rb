@@ -40,7 +40,8 @@ get '/candidates/show' do
   cand_sec = candidate.sector({:cid => CID})["response"]
   @cand_sec = cand_sec["sectors"]
   @cand_sec_extract = extract_amounts(@cand_sec["sector"])
-  
+
+  @received_don_total = @cand_con_extract[2] + @cand_ind_extract[2] + @cand_sec_extract[2]
   erb :'candidates/show'
 
 end
