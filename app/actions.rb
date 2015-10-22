@@ -1,5 +1,6 @@
 #just to test for getting data on the 'candidates/show erb'
 
+
 # REPUBLICAN CANDIDATES
 PILOSI = 'N00007360'
 BUSH = 'N00037006'
@@ -28,7 +29,6 @@ SANDERS = 'N00000528'
 
 #INDEPENDANT CANDIDATES
 STEIN = 'N00033776'
->>>>>>> b90ea30e2b994ac6f2c9322256d74b39cf2d69b3
 
 helpers do
 
@@ -43,6 +43,7 @@ helpers do
       sum_indiv += org["indivs"].to_i
     end
     [sum_pac, sum_indiv, total]
+  end
 end
 
 
@@ -60,20 +61,18 @@ get '/candidates/show/:id' do
 
   cand_con = candidate.contributors({:cid => params[:id]})["response"]
   @cand_con = cand_con["contributors"]
+  @cand_con_extract = extract_amounts(@cand_con["contributor"])
+
 
   cand_ind = candidate.industries({:cid => params[:id]})["response"]
   @cand_ind = cand_ind["industries"]
+  @cand_ind_extract = extract_amounts(@cand_ind["industry"])
 
   cand_sec = candidate.sector({:cid => params[:id]})["response"]
   @cand_sec = cand_sec["sectors"]
-<<<<<<< HEAD
-=======
   @cand_sec_extract = extract_amounts(@cand_sec["sector"])
 
   @received_don_total = @cand_con_extract[2] + @cand_ind_extract[2] + @cand_sec_extract[2]
-  erb :'candidates/show'
->>>>>>> rob_p
-
   erb :'candidates/show'
 end
 
