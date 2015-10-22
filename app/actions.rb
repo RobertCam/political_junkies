@@ -1,5 +1,5 @@
 #just to test for getting data on the 'candidates/show erb'
-CID = 'N00023864'
+CID = 'N00007360'
 
 helpers do
 
