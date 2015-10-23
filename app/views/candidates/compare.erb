@@ -1,53 +1,76 @@
 <div class="container-fluid">
   <div class="row top_row">
     <div class="col-sm-4"><h1 id="cand_name">Nancy Pelosi</h1></div>
-    <div class="col-sm-1">
-      <li class="dropdown dropdown_compare">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i>Candidate <span class="badge">7</span></a>
-        <ul class="dropdown-menu" role="menu">
-          <li><a href="/candidates/show/<%= PILOSI %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Nancy Pilosi</a></li>
-          <li><a href="/candidates/show/<%= CRUZ %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Ted Cruz</a></li>
-          <li><a href="/candidates/show/<%= GRAHAM %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Lindsey Graham</a></li>
-          <li><a href="/candidates/show/<%= PAUL %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Rand Paul</a></li>
-          <li><a href="/candidates/show/<%= RUBIO %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Marco Rubio</a></li>
-          <li><a href="/candidates/show/<%= SANDERS %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">DEM</span> Bernie Sanders</a></li>
-          <li><a href="/candidates/show/<%= CLINTON %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">DEM</span> Hilary Clinton</a></li>
-        </ul>
-      </li>
-    </div>
-    <div class="col-sm-1"></div>
-    <div class="col-sm-1"></div>
-    <div class="col-sm-1">
-      <li class="dropdown dropdown_compare">
-       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i>Candidate <span class="badge">7</span></a>
-        <ul class="dropdown-menu" role="menu">
-          <li><a href="/candidates/show/<%= PILOSI %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Nancy Pilosi</a></li>
-          <li><a href="/candidates/show/<%= CRUZ %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Ted Cruz</a></li>
-          <li><a href="/candidates/show/<%= GRAHAM %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Lindsey Graham</a></li>
-          <li><a href="/candidates/show/<%= PAUL %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Rand Paul</a></li>
-          <li><a href="/candidates/show/<%= RUBIO %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span> Marco Rubio</a></li>
-          <li><a href="/candidates/show/<%= SANDERS %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">DEM</span> Bernie Sanders</a></li>
-          <li><a href="/candidates/show/<%= CLINTON %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">DEM</span> Hilary Clinton</a></li>
-        </ul>
-      </li>
-    </div>
-  <div class="col-sm-4"><h1 id="cand_name">Bernie Sanders</h1></div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><h1 id="cand_name">Bernie Sanders</h1></div>
+  </div>
   <div class="row versus_row"><h1 id="versus">VS</h1></div>
-  <div class="row sponsors_row">
+  <div class="row compare_row">
+    <div class="col-sm-4"><h2 class="compare_values_spacing"><%= @cand_sum["total"] %></h2></div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><h2 class="compare_values_spacing"><%= @cand2_sum["total"] %></h2></div>
+  </div>
+  <div class="row compare_row">
     <div class="col-sm-4"></div>
       <div class="col-sm-4">
-        <h1 class="sponsor_header bold_headers">Total expenditure</h1><br><br><br><br>
-        <h1 class="sponsor_header bold_headers">Total donations received</h1><br><br><br><br>
-        <h1 class="sponsor_header bold_headers">Total sector donations</h1><br><br><br><br>
-        <h1 class="sponsor_header bold_headers">Top 3 sector donors</h1><br><br><br><br>
-        <h1 class="sponsor_header bold_headers">Total contributor donations</h1><br><br><br><br>
-        <h1 class="sponsor_header bold_headers">Top 3 contributor donors</h1><br><br><br><br>
-        <h1 class="sponsor_header bold_headers">Total industry donations</h1><br><br><br><br>
-        <h1 class="sponsor_header bold_headers">Top 3 industry donors</h1><br><br><br><br>
+        <h1 class="sponsor_header bold_headers compare_page_spacing_headers">Total donations received</h1>
       </div>
     <div class="col-sm-4"></div>
-  </h1>
-  <div class="row sponsors_row">
-    
+  </div>
+  <div class="row compare_row">
+    <div class="col-sm-4"><h2 class="compare_values_spacing"><%= @cand_sum["spent"] %></h2></div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><h2 class="compare_values_spacing"><%= @cand2_sum["spent"] %></h2></div>
+  </div>
+  <div class="row compare_row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <h1 class="sponsor_header bold_headers compare_page_spacing_headers">Total expenditure</h1>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+  <div class="row compare_row">
+    <div class="col-sm-4"><h2 class="compare_values_spacing"><%= @cand_sec_extract[2] %></h2></div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><h2 class="compare_values_spacing"><%= @cand2_sec_extract[2] %></h2></div>
+  </div>
+  <div class="row compare_row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <h1 class="sponsor_header bold_headers compare_page_spacing_headers">Total sector donations</h1>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+  <div class="row compare_row">
+    <div class="col-sm-4"><h2 class="compare_values_spacing"><%= @cand_con_extract[2] %></h2></div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><h2 class="compare_values_spacing"><%= @cand2_con_extract[2] %></h2></div>
+  </div>
+  <div class="row compare_row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <h1 class="sponsor_header bold_headers compare_page_spacing_headers">Total contributor donations</h1>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+  <div class="row compare_row">
+    <div class="col-sm-4"><h2 class="compare_values_spacing"><%= @cand_ind_extract[2] %></h2></div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><h2 class="compare_values_spacing"><%= @cand2_ind_extract[2] %></h2></div>
+  </div>
+  <div class="row compare_row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <h1 class="sponsor_header bold_headers compare_page_spacing_headers">Total industry donations</h1>
+    </div>
+    <div class="col-sm-4"></div>
   </div>
 </div>
+
+     <!--  <h1 class="sponsor_header bold_headers compare_page_spacing_headers">Total expenditure</h1>
+        <h1 class="sponsor_header bold_headers compare_page_spacing_headers">Total sector donations</h1>
+        <h1 class="sponsor_header bold_headers compare_page_spacing_headers">Top 3 sector donors</h1>
+        <h1 class="sponsor_header bold_headers compare_page_spacing_headers">Total contributor donations</h1>
+        <h1 class="sponsor_header bold_headers compare_page_spacing_headers">Top 3 contributor donors</h1>
+        <h1 class="sponsor_header bold_headers compare_page_spacing_headers">Total industry donations</h1>
+        <h1 class="sponsor_header bold_headers compare_page_spacing_headers">Top 3 industry donors</h1> -->

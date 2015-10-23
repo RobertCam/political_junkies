@@ -1,32 +1,16 @@
 #just to test for getting data on the 'candidates/show erb'
 # REPUBLICAN CANDIDATES
 PILOSI = 'N00007360'
-BUSH = 'N00037006'
-CARSON = 'N00036973'
-CHRISTIE = 'N00037008'
 CRUZ = 'N00033085'
-FIORINA = 'N00031348'
-GILMORE = 'N00028961'
 GRAHAM = 'N00009975'
-HUCKABEE = 'N00007539'
-JINDAL = 'N00026786'
-KASICH = 'N00009778'
-PATAKI = 'N00028981'
 PAUL = 'N00030836'
 RUBIO = 'N00030612'
-SANTORUM = 'N00001380'
-TRUMP = 'N00023864'
+
+
 
 #DEMOCRATIC CANDIDATES
-BIDEN = 'N00001669'
-CHAFEE = 'N00009954'
 CLINTON = 'N00000019'
-LESSIG = 'N00029841'
-OMALLEY = 'N00037007'
 SANDERS = 'N00000528'
-
-#INDEPENDANT CANDIDATES
-STEIN = 'N00033776'
 # ----------------------------------------
 
 helpers do
@@ -42,7 +26,7 @@ helpers do
       sum_indiv += org["indivs"].to_i
     end
     [sum_pac, sum_indiv, total]
-  end
+  end 
   
   # turns integer into a decimal and adds Million string
   def to_million(num)
@@ -79,8 +63,6 @@ get '/candidates/show/:id' do
   cand_sec = candidate.sector({:cid => params[:id]})["response"]
   @cand_sec = cand_sec["sectors"]
   @cand_sec_extract = extract_amounts(@cand_sec["sector"])
-
-  @received_don_total = @cand_con_extract[2] + @cand_ind_extract[2] + @cand_sec_extract[2]
  
   erb :'candidates/show'
 end
@@ -90,7 +72,44 @@ get '/candidates' do
   erb :'candidates/index'
 end
 
-get '/candidates/compare' do
+get '/candidates/compare_candidates' do
+  erb :'candidates/compare_candidates'
+end
+
+post '/candidates/compare' do
+# Candidate one
+  candidate = OpenSecrets::Candidate.new
+  cand_sum = candidate.summary({:cid => params[:cand1]})["response"]
+  @cand_sum = cand_sum["summary"]
+
+  cand_con = candidate.contributors({:cid => params[:cand1]})["response"]
+  @cand_con = cand_con["contributors"]
+  @cand_con_extract = extract_amounts(@cand_con["contributor"])
+
+  cand_ind = candidate.industries({:cid => params[:cand1]})["response"]
+  @cand_ind = cand_ind["industries"]
+  @cand_ind_extract = extract_amounts(@cand_ind["industry"])
+
+  cand_sec = candidate.sector({:cid => params[:cand1]})["response"]
+  @cand_sec = cand_sec["sectors"]
+  @cand_sec_extract = extract_amounts(@cand_sec["sector"])
   
+# Candidate two 
+  cand2_sum = candidate.summary({:cid => params[:cand2]})["response"]
+  @cand2_sum = cand2_sum["summary"]
+
+  cand2_con = candidate.contributors({:cid => params[:cand2]})["response"]
+  @cand2_con = cand2_con["contributors"]
+  @cand2_con_extract = extract_amounts(@cand2_con["contributor"])
+
+  cand2_ind = candidate.industries({:cid => params[:cand2]})["response"]
+  @cand2_ind = cand2_ind["industries"]
+  @cand2_ind_extract = extract_amounts(@cand2_ind["industry"])
+
+  cand2_sec = candidate.sector({:cid => params[:cand2]})["response"]
+  @cand2_sec = cand2_sec["sectors"]
+  @cand2_sec_extract = extract_amounts(@cand2_sec["sector"])
+
   erb :'candidates/compare'
+
 end

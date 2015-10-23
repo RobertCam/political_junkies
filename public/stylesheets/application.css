@@ -7,6 +7,10 @@ li {
   text-align: center;
   font-size: 16px;
 }
+
+.compare_page_spacing_headers {
+  margin-top: 22%;
+}
   
 .center_text {
   text-align: center; 
@@ -30,6 +34,7 @@ h1#versus {
   list-style-type: none;
 }
 
+
 h1#cand_name {
   font-weight: 900;
   font-size: 60px;
@@ -44,12 +49,17 @@ div.sponsors_row {
   margin-top: 20%;
 }
 
+.compare_row {
+  margin-top: 20%;
+  margin-bottom: -18.5%;
+}
+
 .sponsor_header {
   font-size: 45px;
 }
 
-div.top_row {
-  margin-top: 2.5%;
+.top_row {
+  margin-top: 3%;
 }
 
 h1.big_numbers{
