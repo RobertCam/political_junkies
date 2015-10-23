@@ -186,6 +186,11 @@ header {
     -o-background-size: cover;
 }
 
+.republican {
+    background-image: url(../img/rep_logo.png);
+    color: black;
+}
+
 header .header-content {
     position: relative;
     width: 100%;

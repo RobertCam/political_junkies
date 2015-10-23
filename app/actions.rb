@@ -1,6 +1,4 @@
 #just to test for getting data on the 'candidates/show erb'
-
-
 # REPUBLICAN CANDIDATES
 PILOSI = 'N00007360'
 BUSH = 'N00037006'
@@ -29,6 +27,7 @@ SANDERS = 'N00000528'
 
 #INDEPENDANT CANDIDATES
 STEIN = 'N00033776'
+# ----------------------------------------
 
 helpers do
 
@@ -44,8 +43,18 @@ helpers do
     end
     [sum_pac, sum_indiv, total]
   end
-end
+  
+  # turns integer into a decimal and adds Million string
+  def to_million(num)
+    "$#{(num.to_f / 1000000).round(2)} Million"
+  end
 
+  # takes last_name, first_name format and outputs first name only
+  def first_name(full_name)
+    full_name.partition(', ').last
+  end
+
+end
 
 #landing page (aka home page)
 get '/' do
@@ -78,4 +87,9 @@ end
 #shows all the candidates
 get '/candidates' do
   erb :'candidates/index'
+end
+
+get '/candidates/compare' do
+  
+  erb :'candidates/compare'
 end
