@@ -79,8 +79,6 @@ get '/candidates/show/:id' do
   cand_sec = candidate.sector({:cid => params[:id]})["response"]
   @cand_sec = cand_sec["sectors"]
   @cand_sec_extract = extract_amounts(@cand_sec["sector"])
-
-  # @cand_con_extract[2] @cand_ind_extract[2] @cand_sec_extract[2]
  
   erb :'candidates/show'
 end
