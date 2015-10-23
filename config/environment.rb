@@ -2,6 +2,7 @@ require 'rubygems'
 require 'opensecrets'
 require 'pp'
 require 'bundler/setup'
+require 'open-uri'
 
 require 'active_support/all'
 

@@ -5,19 +5,21 @@
 
     <header class="republican">
         <div class="header-content">
-            <div class="header-content-inner col-lg-7">
-                <h1><%= @cand_sum["cand_name"] %></h1>
-                <hr>
-                <h2><%= to_million(@cand_sum["total"]) %></h2>
-                <h4>Total Donations Received</h4>
-                <hr>
-                <h2><%= to_million(@cand_sum["spent"]) %></h2>
-                <h4>Total Spent</h4>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Who's hands are in <%= first_name(@cand_sum["cand_name"])%>'s pocket?</a>
-            </div>
+          <!-- <div class="cand_img"> -->
+              <img src="<%= @cand_img %>" class="cand_img">
+          <!-- </div> -->
+          <div class="header-content-inner col-lg-7">
+            <h1><%= @cand_sum["cand_name"] %></h1>
+            <hr>
+            <h2><%= to_million(@cand_sum["total"]) %></h2>
+            <h4>Total Donations Received</h4>
+            <hr>
+            <h2><%= to_million(@cand_sum["spent"]) %></h2>
+            <h4>Total Spent</h4>
+            <a href="#about" class="btn btn-primary btn-xl page-scroll">Who's hands are in <%= first_name(@cand_sum["cand_name"])%>'s pocket?</a>
+          </div>
         </div>
     </header>
-
     <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
