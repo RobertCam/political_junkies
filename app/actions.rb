@@ -33,9 +33,14 @@ helpers do
     "$#{(num.to_f / 1000000).round(2)} Million"
   end
 
-  # takes last_name, first_name format and outputs first name only
+  # takes "last_name, first_name" format and outputs first name only
   def first_name(full_name)
     full_name.partition(', ').last
+  end
+
+  # takes integer and transforms it into a number with commas ex: 10000 => "10,000"
+  def fancy_number(num)
+    "$" + num.to_s.reverse.scan(/\d{3}|.+/).join(",").reverse
   end
 
 end
