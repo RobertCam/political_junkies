@@ -63,7 +63,6 @@ get '/candidates/show/:id' do
   @cand_con = cand_con["contributors"]
   @cand_con_extract = extract_amounts(@cand_con["contributor"])
 
-
   cand_ind = candidate.industries({:cid => params[:id]})["response"]
   @cand_ind = cand_ind["industries"]
   @cand_ind_extract = extract_amounts(@cand_ind["industry"])
