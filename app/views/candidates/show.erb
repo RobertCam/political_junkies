@@ -39,7 +39,7 @@
             <div class="header-content-inner col-lg-7">
                 <h1><%= @cand_sum["cand_name"] %></h1>
                 <hr>
-                <h2><%= to_million(@received_don_total) %></h2>
+                <h2><%= to_million(@cand_sum["total"]) %></h2>
                 <h4>Total Donations Received</h4>
                 <hr>
                 <h2><%= to_million(@cand_sum["spent"]) %></h2>
@@ -56,7 +56,7 @@
                     <h1 class="section-heading">
                         <% @cand_con["contributor"].each do |con| %>
                             <ul>
-                              <li><%= con["org_name"] %></li> 
+                              <li><%= con["org_name"] %> ($<%= con["total"] %>)</li> 
                             </ul>
                           <% end %>
                     </h1>
