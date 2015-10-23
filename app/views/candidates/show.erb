@@ -53,15 +53,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h1 class="section-heading">
+                    <h2 class="section-heading">
                         <% @cand_con["contributor"].each do |con| %>
                             <ul>
                               <li><%= con["org_name"] %></li> 
                             </ul>
                           <% end %>
-                    </h1>
+                    </h2>
                     <hr class="light">
-                    <p class="text-faded"><%= to_million(@cand_con_extract[2]) %></p>
+                    <p class="text-faded">Total donations:<%= to_million(@cand_con_extract[2]) %></p>
                     <a href="#" class="btn btn-default btn-xl">Politics!</a>
                 </div>
             </div>

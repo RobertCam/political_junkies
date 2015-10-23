@@ -49,7 +49,7 @@ helpers do
     "$#{(num.to_f / 1000000).round(2)} Million"
   end
 
-  # takes last_name, first_name format and outputs first name only
+  # takes "last_name, first_name" format and outputs first name only
   def first_name(full_name)
     full_name.partition(', ').last
   end
