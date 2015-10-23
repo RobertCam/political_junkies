@@ -54,6 +54,10 @@ helpers do
     full_name.partition(', ').last
   end
 
+  # takes integer and transforms it into a number with commas ex: 10000 => 10,000
+  def fancy_number(num)
+  end
+
 end
 
 #landing page (aka home page)
