@@ -3,7 +3,12 @@
 
 <body id="page-top">
 
-    <header class="republican">
+    <% if @cand_sum["party"] == "R" %>
+
+        <header class="republican">
+    <% else %>
+        <header class="democrat">
+    <% end %>
         <div class="header-content">
             <div class="header-content-inner col-lg-7">
                 <h1><%= @cand_sum["cand_name"] %></h1>
