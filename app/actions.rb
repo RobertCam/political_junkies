@@ -62,9 +62,7 @@ end
 get '/candidates/show/:id' do
   image.each do |can, img|
     if can == params[:id].to_s 
-      # fix the logic above to do comparison by the candidate ID rather than name
       @cand_img = img
-      # binding.pry
     end 
   end 
 

@@ -170,6 +170,13 @@ header .header-content .header-content-inner p {
   position: relative;
 }
 
+.cand_profile {
+  border-radius: 100%;
+  border-style: solid;
+  border-width: thick;
+  border-color: #f05f40;
+}
+
 .cand_img {
   display: inline;
   border-radius: 30px;
@@ -180,6 +187,12 @@ header .header-content .header-content-inner p {
   border-width: thick;
   border-color: #f05f40;
 }
+
+@media only screen
+  and (min-width : 80%)
+  and (max-width : 100%) {
+    .cand_img { visibility: hidden; }
+  }
 
 .bg-primary {
     background-color: #f05f40;
