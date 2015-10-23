@@ -54,6 +54,11 @@ helpers do
     full_name.partition(', ').last
   end
 
+  # takes integer and transforms it into a number with commas ex: 10000 => "10,000"
+  def fancy_number(num)
+    "$" + num.to_s.reverse.scan(/\d{3}|.+/).join(",").reverse
+  end
+
 end
 
 #landing page (aka home page)
@@ -79,8 +84,6 @@ get '/candidates/show/:id' do
   cand_sec = candidate.sector({:cid => params[:id]})["response"]
   @cand_sec = cand_sec["sectors"]
   @cand_sec_extract = extract_amounts(@cand_sec["sector"])
-
-  # @cand_con_extract[2] @cand_ind_extract[2] @cand_sec_extract[2]
  
   erb :'candidates/show'
 end
