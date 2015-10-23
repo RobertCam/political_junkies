@@ -1,6 +1,4 @@
 #just to test for getting data on the 'candidates/show erb'
-
-
 # REPUBLICAN CANDIDATES
 PILOSI = 'N00007360'
 BUSH = 'N00037006'
@@ -29,6 +27,7 @@ SANDERS = 'N00000528'
 
 #INDEPENDANT CANDIDATES
 STEIN = 'N00033776'
+# ----------------------------------------
 
 helpers do
 
@@ -45,7 +44,6 @@ helpers do
     [sum_pac, sum_indiv, total]
   end
 end
-
 
 #landing page (aka home page)
 get '/' do
@@ -78,4 +76,9 @@ end
 #shows all the candidates
 get '/candidates' do
   erb :'candidates/index'
+end
+
+get '/candidates/compare' do
+  
+  erb :'candidates/compare'
 end
