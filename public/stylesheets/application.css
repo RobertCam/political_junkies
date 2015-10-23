@@ -140,3 +140,40 @@ header .header-content .header-content-inner p {
 .bg-primary {
     background-color: #f05f40;
 }
+
+.result {
+  margin-left: 30%;
+}
+
+.gsc-input {
+  visibility: hidden;
+}
+
+.gsc-search-button {
+  visibility: hidden;
+}
+
+.gsc-clear-button {
+  visibility: hidden;
+}
+
+.gsc-configLabelCell {
+  visibility: hidden;
+}
+
+.gsc-result-selector.gsc-more-results {
+  visibility: hidden;
+}
+
+.gsc-result-selector.gsc-one-result {
+  visibility: hidden;
+}
+
+.gsc-result-selector.gsc-all-results {
+  visibility: hidden;
+}
+
+.gsc-title {
+  visibility: hidden;
+}
+
