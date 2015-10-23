@@ -1,54 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" type="text/css">
-
-    <!-- Custom Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
-
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="/stylesheets/animate.min.css" type="text/css">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/stylesheets/creative.css" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
 <body id="page-top">
 
     <header class="republican">
         <div class="header-content">
-            <div class="header-content-inner col-lg-7">
-                <h1><%= @cand_sum["cand_name"] %></h1>
-                <hr>
-                <h2><%= to_million(@cand_sum["total"]) %></h2>
-                <h4>Total Donations Received</h4>
-                <hr>
-                <h2><%= to_million(@cand_sum["spent"]) %></h2>
-                <h4>Total Spent</h4>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Who's hands are in <%= first_name(@cand_sum["cand_name"])%>'s pocket?</a>
-            </div>
+          <!-- <div class="cand_img"> -->
+              <img src="<%= @cand_img %>" class="cand_img">
+          <!-- </div> -->
+          <div class="header-content-inner col-lg-7">
+            <h1><%= @cand_sum["cand_name"] %></h1>
+            <hr>
+            <h2><%= to_million(@cand_sum["total"]) %></h2>
+            <h4>Total Donations Received</h4>
+            <hr>
+            <h2><%= to_million(@cand_sum["spent"]) %></h2>
+            <h4>Total Spent</h4>
+            <a href="#about" class="btn btn-primary btn-xl page-scroll">Who's hands are in <%= first_name(@cand_sum["cand_name"])%>'s pocket?</a>
+          </div>
         </div>
     </header>
-
     <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">

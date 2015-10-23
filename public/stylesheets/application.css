@@ -156,6 +156,21 @@ header .header-content .header-content-inner p {
     }
 }
 
+.republican {
+  position: relative;
+}
+
+.cand_img {
+  display: inline;
+  border-radius: 30px;
+  position: absolute;
+  left: 60%;
+  top: 15%;
+  border-style: solid;
+  border-width: thick;
+  border-color: #f05f40;
+}
+
 .bg-primary {
     background-color: #f05f40;
 }
