@@ -28,12 +28,12 @@
                         <hr class="light">
                         <% @cand_con["contributor"].each do |con| %>
                             <ul>
-                              <li><%= con["org_name"] %> <span class="text-faded">($<%= con["total"] %>)</span></li> 
+                              <li><%= con["org_name"] %> <span class="text-faded">(<%= fancy_number(con["total"]) %>)</span></li> 
                             </ul>
                           <% end %>
                     </h2>
                     <hr class="light">
-                    <h1>$<%= @cand_con_extract[2] %></h1>
+                    <h1><%= fancy_number(@cand_con_extract[2]) %></h1>
                     <p class="text-faded">Total Donations</p>
                 </div>
                 <!-- sector list and amount -->
@@ -43,12 +43,12 @@
                         <hr class="light">
                         <% @cand_sec["sector"].each do |sec| %>
                             <ul>
-                              <li><%= sec["sector_name"] %> <span class="text-faded">($<%= sec["total"] %>)</span></li> 
+                              <li><%= sec["sector_name"] %> <span class="text-faded">(<%= fancy_number(sec["total"]) %>)</span></li> 
                             </ul>
                           <% end %>
                     </h2>
                     <hr class="light">
-                    <h1>$<%= @cand_sec_extract[2] %></h1>
+                    <h1><%= fancy_number(@cand_sec_extract[2]) %></h1>
                     <p class="text-faded">Total Donations</p>
                     <a href="#" class="btn btn-default btn-xl">Back to <%= first_name(@cand_sum["cand_name"])%></a>
                 </div>
@@ -59,12 +59,12 @@
                         <hr class="light">
                         <% @cand_ind["industry"].each do |ind| %>
                             <ul>
-                              <li><%= ind["industry_name"] %> <span class="text-faded">($<%= ind["total"] %>)</span></li> 
+                              <li><%= ind["industry_name"] %> <span class="text-faded">(<%= fancy_number(ind["total"]) %>)</span></li> 
                             </ul>
                           <% end %>
                     </h2>
                     <hr class="light">
-                    <h1>$<%= @cand_ind_extract[2] %></h1>
+                    <h1><%= fancy_number(@cand_ind_extract[2]) %></h1>
                     <p class="text-faded">Total Donations</p>
                 </div>
             </div>

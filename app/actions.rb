@@ -54,8 +54,9 @@ helpers do
     full_name.partition(', ').last
   end
 
-  # takes integer and transforms it into a number with commas ex: 10000 => 10,000
+  # takes integer and transforms it into a number with commas ex: 10000 => "10,000"
   def fancy_number(num)
+    "$" + num.to_s.reverse.scan(/\d{3}|.+/).join(",").reverse
   end
 
 end
