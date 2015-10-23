@@ -8,10 +8,6 @@ li {
   font-size: 16px;
 }
 
-.compare_page_spacing_headers {
-  margin-top: 22%;
-}
-  
 .center_text {
   text-align: center; 
 }
@@ -27,6 +23,7 @@ h5 {
 h1#versus {
   font-size: 120px;
   font-weight: 700;
+
 }
 
 .dropdown_compare {
@@ -51,7 +48,7 @@ div.sponsors_row {
 
 .compare_row {
   margin-top: 20%;
-  margin-bottom: -18.5%;
+  margin-bottom: -10.5%;
 }
 
 .sponsor_header {
@@ -62,7 +59,7 @@ div.sponsors_row {
   margin-top: 3%;
 }
 
-h1.big_numbers{
+.big_numbers{
   font-weight: 800;
 }
 
@@ -75,9 +72,19 @@ h1.big_numbers{
 }
 
 .versus_row {
-  margin-bottom: -15.5% ;
+  margin-bottom: -5.5% ;
   margin-top: 10.5%;
 }
+
+.row_compare_first {
+  margin-top: -15%;
+}
+
+.compare_page_spacing_headers {
+  margin-top: -15%;
+  margin-bottom: 10%;
+}
+
 
 /*nav_bar CSS*/
 nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
