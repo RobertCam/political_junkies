@@ -44,6 +44,11 @@ helpers do
     end
     [sum_pac, sum_indiv, total]
   end
+
+  def to_million(num)
+    "$#{(num.to_f / 1000000).round(2)} Million"
+  end
+
 end
 
 
