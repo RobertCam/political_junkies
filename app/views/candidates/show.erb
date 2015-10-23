@@ -16,7 +16,7 @@
           <div class="header-content-inner col-lg-7">
             <h1><%= @cand_sum["cand_name"] %></h1>
             <hr>
-            <h2><%= to_million(@cand_sum["total"]) %></h2>
+            <h2><span class="Count"><%= @cand_sum["total"] %></span></h2>
             <h4>Total Donations Received</h4>
             <hr>
             <h2><%= to_million(@cand_sum["spent"]) %></h2>
