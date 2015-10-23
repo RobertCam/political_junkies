@@ -77,3 +77,8 @@ end
 get '/candidates' do
   erb :'candidates/index'
 end
+
+get '/candidates/compare' do
+  
+  erb :'candidates/compare'
+end

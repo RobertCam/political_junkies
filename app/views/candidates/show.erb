@@ -2,10 +2,10 @@
   <!-- top row: should have donations, name, image -->
   <div class="row top_row">
     <div class="col-sm-4">
-      <h1 class="big_numbers">$<%= @received_don_total %></h1>
-      <h4>Total Donations Received</h4><br>
       <h1 class="big_numbers">$<%= @cand_sum["spent"] %></h1>
-      <h4>Total Spent</h4><br>
+      <h4>Total expenditure</h4><br>
+      <h1 class="big_numbers">$<%= @received_don_total %></h1>
+      <h4>Total donations Received</h4><br>
     </div>
     <div class="col-sm-4"><h1 id="cand_name"><%= @cand_sum["cand_name"] %></h1><br></div>
     <div class="col-sm-4"></div>
