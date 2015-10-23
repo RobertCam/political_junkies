@@ -1,0 +1,104 @@
+<div class="container-fluid"> 
+  <!-- top row: should have donations, name, image -->
+  <div class="row top_row">
+    <div class="col-sm-4">
+      <h1 class="big_numbers">$<%= @received_don_total %></h1>
+      <h4>Total Donations Received</h4><br>
+
+      <h1 class="big_numbers">$<%= @cand_sum["spent"] %></h1>
+      <h4>Total Spent</h4><br>
+    </div>
+    <div class="col-sm-4"><h1 id="cand_name"><%= @cand_sum["cand_name"] %></h1><br></div>
+    <div class="col-sm-4"></div>
+  </div>
+  <!-- sponsors for sector, contributor and indsutry by name -->
+  <div class="row sponsors_divider">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><h2 class="bold_headers sponsor_header">Sponsors</h2></div>
+    <div class="col-sm-4"></div>
+  </div>
+  <div class="row sponsors_row">
+    <div class="col-sm-4">
+      <h3 class="bold_headers">Sectors</h3><br>
+      <% @cand_sec["sector"].each do |sec| %>
+        <ul>
+          <li><%= sec["sector_name"] %></li>
+        </ul>
+      <% end %>
+    </div>
+    <div class="col-sm-4">
+      <h3 class="bold_headers">Contributors</h3><br>
+      <% @cand_con["contributor"].each do |con| %>
+        <ul>
+          <li><%= con["org_name"] %></li> 
+        </ul>
+      <% end %>
+    </div>
+    <div class="col-sm-4">
+      <h3 class="bold_headers">Industries</h3><br>
+      <% @cand_ind["industry"].each do |ind| %>
+        <ul>
+          <li><%= ind["industry_name"] %></li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+  <!-- 3rd row with the breakdown of donations for each sector (following from the prior row) ; each column is broken down into nested sub-columns -->
+  <div class="row breakdown_row">
+    <div class="col-sm-4">
+      <div class="row">
+      <!-- <h3>Sector donations breakdown</h3> -->
+        <div class="col-sm-4">
+          <h1>$<%= @cand_sec_extract[0] %></h1>
+          <h4>PAC donations</h4>
+        </div>
+        <div class="col-sm-4">
+          <h1>$<%= @cand_sec_extract[1] %></h1>
+          <h4>Individual donations</h4>
+        </div>
+        <div class="col-sm-4">
+          <h1>$<%= @cand_sec_extract[2] %></h1>
+          <h4>Total donations</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="row">
+      <!-- <h3>Contributors donations breakdown</h3> -->
+        <div class="col-sm-4">
+          <h1>$<%= @cand_con_extract[0] %></h1>
+          <h4>PAC donations</h4>
+        </div>
+        <div class="col-sm-4">
+          <h1>$<%= @cand_con_extract[1] %></h1>
+          <h4>Individual donations</h4>
+        </div>
+        <div class="col-sm-4">
+          <h1>$<%= @cand_con_extract[2] %></h1>
+          <h4>Total donations</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="row">
+      <!-- <h3>Industry donations breakdown</h3> -->
+        <div class="col-sm-4">
+          <h1>$<%= @cand_ind_extract[0] %></h1>
+          <h4>PAC donations</h4>
+        </div>
+        <div class="col-sm-4">
+          <h1>$<%= @cand_ind_extract[1] %></h1>
+          <h4>Individual donations</h4>
+        </div>
+        <div class="col-sm-4">
+          <h1>$<%= @cand_ind_extract[2] %></h1>
+          <h4>Total donations</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
