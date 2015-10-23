@@ -187,6 +187,11 @@ header {
 }
 
 .republican {
+    background-image: url(../img/rep_logo.png);
+    color: black;
+}
+
+.democrat {
     background-image: url(../img/dem_logo.png);
     color: black;
 }
