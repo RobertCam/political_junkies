@@ -44,9 +44,15 @@ helpers do
     end
     [sum_pac, sum_indiv, total]
   end
-
+  
+  # turns integer into a decimal and adds Million string
   def to_million(num)
     "$#{(num.to_f / 1000000).round(2)} Million"
+  end
+
+  # takes last_name, first_name format and outputs first name only
+  def first_name(full_name)
+    full_name.partition(', ').last
   end
 
 end

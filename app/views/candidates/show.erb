@@ -34,15 +34,17 @@
 
 <body id="page-top">
 
-    <header>
+    <header class="republican">
         <div class="header-content">
-            <div class="header-content-inner">
+            <div class="header-content-inner col-lg-7">
                 <h1><%= @cand_sum["cand_name"] %></h1>
                 <hr>
                 <h2><%= to_million(@received_don_total) %></h2>
+                <h4>Total Donations Received</h4>
                 <hr>
-                <p>Find which corporations are sponsoring Presidential Candidates.</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <h2><%= to_million(@cand_sum["spent"]) %></h2>
+                <h4>Total Spent</h4>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Who's hands are in <%= first_name(@cand_sum["cand_name"])%>'s pocket?</a>
             </div>
         </div>
     </header>
@@ -51,10 +53,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">We've got what you need!</h2>
+                    <h1 class="section-heading">
+                        <% @cand_con["contributor"].each do |con| %>
+                            <ul>
+                              <li><%= con["org_name"] %></li> 
+                            </ul>
+                          <% end %>
+                    </h1>
                     <hr class="light">
-                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                    <a href="#" class="btn btn-default btn-xl">Get Started!</a>
+                    <p class="text-faded">Poli Pocket</p>
+                    <a href="#" class="btn btn-default btn-xl">Politics!</a>
                 </div>
             </div>
         </div>
