@@ -10,5 +10,19 @@ $(document).ready(function() {
       }
     });
   });
-
 });
+
+function makeDonut(target, data)
+{
+    new Morris.Donut({
+    element: target,
+    data: [
+      {label: "Individual", value: data[0]},
+      {label: "PAC", value: data[1]},
+      {label: "Total", value: data[2]}
+    ],
+    resize: true,
+    colors: ["#0066FF", "#000066", "#82C4E6"]
+
+  });
+}

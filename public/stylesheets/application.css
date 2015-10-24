@@ -246,6 +246,10 @@ header .header-content .header-content-inner p {
     .cand_img { visibility: hidden; }
   }
 
+.show-big {
+  margin-top: 30%;
+}
+
 .bg-primary {
     background-color: #f05f40;
 }
