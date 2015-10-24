@@ -177,15 +177,25 @@ header .header-content .header-content-inner p {
   border-color: #f05f40;
 }
 
+.cand_profile_nancy {
+  border-radius: 100%;
+  border-style: solid;
+  border-width: thick;
+  border-color: #f05f40;
+  width: 217px;
+  height: 215px;
+}
+
 .cand_img {
   display: inline;
-  border-radius: 30px;
+  border-radius: 50%;
   position: absolute;
   left: 60%;
   top: 15%;
   border-style: solid;
   border-width: thick;
   border-color: #f05f40;
+  height: 200px;
 }
 
 @media only screen
