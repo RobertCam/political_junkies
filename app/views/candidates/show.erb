@@ -81,7 +81,14 @@
             <div class="row">
                 <% %w(cand_con_extract cand_ind_extract cand_sec_extract).each do |var| %>
                     <div class="col-lg-4 text-center">
-                        <h2 class="section-sec">Sector</h2>
+                        <% if var == "cand_con_extract" %> 
+                        <% var_new = "Organizations" %>
+                        <% elsif var == "cand_ind_extract"%>
+                        <% var_new = "Industry" %>
+                        <% elsif var == "cand_sec_extract"%>
+                        <% var_new = "Sector" %>
+                        <% end %>
+                        <h2 class="section-heading"><%= var_new %></h2>
                         <hr class="primary">
                         <div id="<%= var %>"></div>
                         <script type="text/javascript">
