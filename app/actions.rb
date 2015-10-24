@@ -31,6 +31,10 @@ helpers do
     "$#{(num.to_f / 1000000).round(2)} Million"
   end
 
+  def divide_by_mil(num)
+    (num.to_f / 1000000)
+  end
+
   # takes "last_name, first_name" format and outputs first name only
   def first_name(full_name)
     full_name.partition(', ').last

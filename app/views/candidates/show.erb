@@ -14,10 +14,10 @@
           <div class="header-content-inner col-lg-7">
             <h1><%= @cand_sum["cand_name"] %></h1>
             <hr>
-            <h2><span class="Count"><%= @cand_sum["total"] %></span></h2>
+            <h2>$<span class="Count"><%= divide_by_mil(@cand_sum["total"]) %></span> Million</h2>
             <h4>Total Donations Received</h4>
             <hr>
-            <h2><%= to_million(@cand_sum["spent"]) %></h2>
+            <h2>$<span class="Count"><%= divide_by_mil(@cand_sum["spent"]) %></span> Million</h2>
             <h4>Total Spent</h4>
             <a href="#about" class="btn btn-primary btn-xl page-scroll">Who's hands are in <%= first_name(@cand_sum["cand_name"])%>'s pocket?</a>
           </div>
