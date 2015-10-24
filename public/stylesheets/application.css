@@ -60,6 +60,23 @@ h1#versus {
 
 }
 
+.right_compare_buttons{
+  position: absolute;
+  right: 22.5%;
+}
+
+.relative_cols {
+  position: relative;
+}
+
+.comp_button {
+  position: absolute;
+  left: 25%;
+  background-color: #D14719;
+  border-color: #D14719;
+}
+
+
 .dropdown_compare {
   margin-top: 15%;
   list-style-type: none;
@@ -82,12 +99,14 @@ div.sponsors_row {
 
 .compare_row {
   margin-top: 20%;
-  margin-bottom: -10.5%;
+  margin-bottom: -2.5%;
 }
 
 .cand-compare-2 {
   margin-left: 3%;
 }
+
+
 
 .compare_background_img {
   background: url("../img/repub_vs_democrat_blur.jpg") no-repeat 50% 50% fixed; 
@@ -95,10 +114,15 @@ div.sponsors_row {
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
+  color: rgb(0,0,0,0.9);
 }
 
 .sponsor_header {
   font-size: 45px;
+}
+
+.fix_overflow_width {
+   overflow-x: hidden;
 }
 
 .top_row {
@@ -130,7 +154,8 @@ div.sponsors_row {
 .compare_page_spacing_headers {
   margin-top: -17.5%;
   margin-bottom: 10%;
-  font-style: italic;
+  font-size: 45px;
+  font-weight: 800;
 }
 
 

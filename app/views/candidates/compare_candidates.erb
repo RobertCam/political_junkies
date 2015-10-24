@@ -1,8 +1,10 @@
 
 <style type="text/css">body {
-  background: url("http://carameredith.files.wordpress.com/2014/05/boxing-ring.jpg") no-repeat 50% 50%;
+  background: url("../img/boxing_ring.jpg") no-repeat 50% 50%;
   background-size: cover;
-  }</style>
+  }
+</style>
+
 <div class="candidates-wrap">
   <div class="container-fluid">
     <div class="row top_row">
@@ -10,19 +12,32 @@
         <div class="col-sm-5">
           <div class="btn-group-2" data-toggle="buttons">
             <% @candidates.each do |name, cand| %>
-              <label class="btn btn-primary">
-                <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand1"> <%= cand.name %>
-              </label><br>
+              <% if name == :PELOSI || name == :SANDERS %>
+                <label class="btn btn-danger">
+                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand1"> <%= cand.name %>
+                </label><br>
+              <% else %>
+                 <label class="btn btn-primary">
+                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand1"> <%= cand.name %>
+                </label><br>
+              <% end %>
             <% end %>
           </div>
         </div>
-        <div class="col-sm-2"><button type="submit" id="compare-btn" class="btn-lg btn-danger">Compare</option></button></div>
-        <div class="col-sm-5"></div>
-         <div class="btn-group-2" data-toggle="buttons">
+        <div class="col-sm-2 relative_cols"><button type="submit" id="compare-btn" class="btn-lg btn-success comp_button">Compare</option></button></div>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-2 relative_cols">
+          <div class="btn-group-2 right_compare_buttons" data-toggle="buttons">
             <% @candidates.each do |name, cand| %>
-              <label class="btn btn-primary">
-                <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2"> <%= cand.name %>
-              </label><br>
+              <% if name == :PELOSI || name == :SANDERS %>
+                <label class="btn btn-danger">
+                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2"> <%= cand.name %>
+                </label><br>
+              <% else %>
+                 <label class="btn btn-primary">
+                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2"> <%= cand.name %>
+                </label><br>
+              <% end %>
             <% end %>
           </div>
         </div>
