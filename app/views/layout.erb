@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="/stylesheets/application.css">
 
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
@@ -39,23 +40,30 @@
   <script language="Javascript" type="text/javascript">
     google.load('search', '1');
 
-    function OnLoad() {
-      var searchControl = new google.search.SearchControl();
 
-      var localSearch = new google.search.LocalSearch();
-      searchControl.addSearcher(new google.search.NewsSearch());
+  function OnLoad() {
+    var searchControl = new google.search.SearchControl();
 
-      searchControl.draw(document.getElementById("searchcontrol"));
+    var localSearch = new google.search.LocalSearch();
+    searchControl.addSearcher(new google.search.NewsSearch());
 
+    searchControl.draw(document.getElementById("searchcontrol"));
+    searchControl.execute("United States presidential election");
+    searchControl.setResultSetSize(2);
+  }
+  
+  google.setOnLoadCallback(OnLoad);
 
-      searchControl.execute("United States presidential election");
-      searchControl.setResultSetSize(2);
-    }
-    
-    google.setOnLoadCallback(OnLoad);
   </script>
 
   <script src="/javascript/application.js"></script>
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+
   <title>Poli Pocket</title>
 </head>
 <body>
