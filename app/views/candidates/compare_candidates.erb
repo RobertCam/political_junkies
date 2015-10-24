@@ -1,34 +1,25 @@
-<link rel="stylesheet" href="/stylesheets/creative.css" type="text/css">
-
-
-<div class="show-big">
-  <div class="container-fluid">
-    <div class="row top_row">
-      <form action="/candidates/compare" method="POST"/>
-        <div class="col-sm-4">
-          <div class="form-group">
-            <input for="cand1" type="radio" value="N00007360" name="cand1">PILOSI</option>
-            <input for="cand1" type="radio" value="N00033085" name="cand1">CRUZ</option>
-            <input for="cand1" type="radio" value="N00009975" name="cand1">GRAHAM</option>
-            <input for="cand1" type="radio" value="N00030836" name="cand1">PAUL</option>
-            <input for="cand1" type="radio" value="N00030612" name="cand1">RUBIO</option>
-            <input for="cand1" type="radio" value="N00000528" name="cand1">SANDERS</option>
-          </div>
+<div class="container-fluid">
+  <div class="row top_row">
+    <form action="/candidates/compare" method="POST"/>
+      <div class="col-sm-5">
+        <div class="btn-group" data-toggle="buttons">
+          <% @candidates.each do |name, cand| %>
+            <label class="btn btn-primary">
+              <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand1"> <%= cand.name %>
+            </label>
+          <% end %>
         </div>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-2"><button type="submit" class="btn btn-success">Compare</button></div>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-4">
-        <div class="form-group">
-          <input for="cand2" type="radio" value="N00007360" name="cand2">PILOSI</option>
-          <input for="cand2" type="radio" value="N00033085" name="cand2">CRUZ</option>
-          <input for="cand2" type="radio" value="N00009975" name="cand2">GRAHAM</option>
-          <input for="cand2" type="radio" value="N00030836" name="cand2">PAUL</option>
-          <input for="cand2" type="radio" value="N00030612" name="cand2">RUBIO</option>
-          <input for="cand2" type="radio" value="N00000528" name="cand2">SANDERS</option>
+      </div>
+      <div class="col-sm-2"><button type="submit" class="btn btn-success">Compare</option></button></div>
+      <div class="col-sm-5"></div>
+       <div class="btn-group" data-toggle="buttons">
+          <% @candidates.each do |name, cand| %>
+            <label class="btn btn-primary">
+              <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2"> <%= cand.name %>
+            </label>
+          <% end %>
         </div>
-        </div>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
-</div>
+</div>  

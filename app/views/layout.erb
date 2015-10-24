@@ -14,8 +14,7 @@
   <!-- Custom Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
-
+  <!-- <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">-->
   <!-- Plugin CSS -->
   <link rel="stylesheet" href="/stylesheets/animate.min.css" type="text/css">
 
@@ -31,18 +30,16 @@
 
 <!--  -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-
   <link rel="stylesheet" href="/stylesheets/application.css">
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-  <script src="https://www.google.com/jsapi"
-        type="text/javascript"></script>
+  <script src="https://www.google.com/jsapi" type="text/javascript"></script>
   <script language="Javascript" type="text/javascript">
+    google.load('search', '1');
 
-  google.load('search', '1');
 
   function OnLoad() {
     var searchControl = new google.search.SearchControl();
@@ -51,8 +48,6 @@
     searchControl.addSearcher(new google.search.NewsSearch());
 
     searchControl.draw(document.getElementById("searchcontrol"));
-
-
     searchControl.execute("United States presidential election");
     searchControl.setResultSetSize(2);
   }
@@ -68,10 +63,11 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 
+
   <title>Poli Pocket</title>
 </head>
-<%= erb :nav_bar %>
 <body>
+  <%= erb :nav_bar %>
   <%= yield %>
 </body>
 </html>
