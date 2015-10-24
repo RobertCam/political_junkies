@@ -78,20 +78,27 @@ get '/candidates/show/:id' do
   end 
 
   candidate = OpenSecrets::Candidate.new
+  @ret = {}
+
+  # %s(summary industries sector).each do |method|
+  #   ret[method] = candidate.call(method, {cid: params[:id]})['response']
+  #   ret["#{method}_extract"] = ex
+  # end
+
   cand_sum = candidate.summary({:cid => params[:id]})["response"]
   @cand_sum = cand_sum["summary"]
 
   cand_con = candidate.contributors({:cid => params[:id]})["response"]
   @cand_con = cand_con["contributors"]
-  @cand_con_extract = extract_amounts(@cand_con["contributor"]) unless params[:id] == "N00000019"
+  @cand_con_extract = extract_amounts(@cand_con["contributor"])
 
   cand_ind = candidate.industries({:cid => params[:id]})["response"] 
   @cand_ind = cand_ind["industries"]
-  @cand_ind_extract = extract_amounts(@cand_ind["industry"]) unless params[:id] == "N00000019"
+  @cand_ind_extract = extract_amounts(@cand_ind["industry"])
 
   cand_sec = candidate.sector({:cid => params[:id]})["response"]
   @cand_sec = cand_sec["sectors"]
-  @cand_sec_extract = extract_amounts(@cand_sec["sector"]) unless params[:id] == "N00000019"
+  @cand_sec_extract = extract_amounts(@cand_sec["sector"])
 
   erb :'candidates/show'
 end

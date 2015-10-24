@@ -246,6 +246,10 @@ header .header-content .header-content-inner p {
     }
 }
 
+.show-big {
+  margin-top: 30%;
+}
+
 .bg-primary {
     background-color: #f05f40;
 }

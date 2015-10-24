@@ -79,13 +79,19 @@
     <section id="services">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">At Your Service</h2>
-                    <hr class="primary">
-                </div>
+                <% %w(cand_con_extract cand_ind_extract cand_sec_extract).each do |var| %>
+                    <div class="col-lg-4 text-center">
+                        <h2 class="section-heading"><%= var %></h2>
+                        <hr class="primary">
+                        <div id="<%= var %>"></div>
+                        <script type="text/javascript">
+                            makeDonut(<%= var %>, <%= self.instance_variable_get("@#{var}")%>)
+                        </script>
+                    </div>
+                <% end %>
             </div>
         </div>
-        <div class="container">
+        <!-- <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
@@ -147,5 +153,5 @@
             </div>
         </div>
     </section>
-
+ -->
 </body>
