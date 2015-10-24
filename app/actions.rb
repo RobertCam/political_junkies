@@ -78,13 +78,7 @@ get '/candidates/show/:id' do
   end 
 
   candidate = OpenSecrets::Candidate.new
-  @ret = {}
-
-  # %s(summary industries sector).each do |method|
-  #   ret[method] = candidate.call(method, {cid: params[:id]})['response']
-  #   ret["#{method}_extract"] = ex
-  # end
-
+ 
   cand_sum = candidate.summary({:cid => params[:id]})["response"]
   @cand_sum = cand_sum["summary"]
 
