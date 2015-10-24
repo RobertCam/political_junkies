@@ -262,6 +262,10 @@ header .header-content .header-content-inner p {
   height: 200px;
 }
 
+img:hover {
+  border-color: #3D69B4;
+}
+
 @media all and (max-width: 1024px) {
     #profile {
         display:none;
