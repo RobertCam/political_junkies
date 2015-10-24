@@ -8,6 +8,22 @@ li {
   font-size: 16px;
 }
 
+.cand_img_compare {
+  border-radius: 20%;
+  height: 200px;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+  position: absolute;
+  right: 25%;
+  margin-top: -22.5%;
+
+}
+
+.cand_compare_img {
+  position: relative;
+}
+
 .center_text {
   text-align: center; 
 }
@@ -34,7 +50,7 @@ h1#versus {
 
 h1#cand_name {
   font-weight: 900;
-  font-size: 60px;
+  font-size: 70px;
 }
 
 .sponsors_divider {
@@ -51,6 +67,14 @@ div.sponsors_row {
   margin-bottom: -10.5%;
 }
 
+.compare_background_img {
+  background: url("../img/repub_vs_democrat_blur.jpg") no-repeat 50% 50% fixed; 
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+}
+
 .sponsor_header {
   font-size: 45px;
 }
@@ -61,6 +85,7 @@ div.sponsors_row {
 
 .big_numbers{
   font-weight: 800;
+  font-size: 45px;
 }
 
 .breakdown_row {
@@ -81,8 +106,9 @@ div.sponsors_row {
 }
 
 .compare_page_spacing_headers {
-  margin-top: -15%;
+  margin-top: -17.5%;
   margin-bottom: 10%;
+  font-style: italic;
 }
 
 

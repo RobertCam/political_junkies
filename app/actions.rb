@@ -113,6 +113,13 @@ post '/candidates/compare' do
   cand_sec = candidate.sector({:cid => params[:cand1]})["response"]
   @cand_sec = cand_sec["sectors"]
   @cand_sec_extract = extract_amounts(@cand_sec["sector"])
+
+  image.each do |can, img|
+    if can == params[:cand1].to_s 
+      # fix the logic above to do comparison by the candidate ID rather than name
+      @cand1_img = img
+    end
+  end
   
 # Candidate two 
   cand2_sum = candidate.summary({:cid => params[:cand2]})["response"]
@@ -130,6 +137,12 @@ post '/candidates/compare' do
   @cand2_sec = cand2_sec["sectors"]
   @cand2_sec_extract = extract_amounts(@cand2_sec["sector"])
 
+  image.each do |can, img|
+    if can == params[:cand2].to_s 
+      # fix the logic above to do comparison by the candidate ID rather than name
+      @cand2_img = img
+    end
+  end
   erb :'candidates/compare'
 
 end
