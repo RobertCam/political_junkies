@@ -6,7 +6,7 @@ $(document).ready(function() {
       duration: 3000,
       easing: 'swing',
       step: function () {
-        $this.text(Math.ceil(this.Counter));
+        $this.text((this.Counter).toFixed(2));
       }
     });
   });
