@@ -240,11 +240,11 @@ header .header-content .header-content-inner p {
   height: 200px;
 }
 
-@media only screen
-  and (min-width : 80%)
-  and (max-width : 100%) {
-    .cand_img { visibility: hidden; }
-  }
+@media all and (max-width: 1024px) {
+    #profile {
+        display:none;
+    }
+}
 
 .bg-primary {
     background-color: #f05f40;
