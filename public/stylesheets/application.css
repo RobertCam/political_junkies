@@ -316,3 +316,19 @@ img:hover {
   visibility: hidden;
 }
 
+.backToTop {
+  position: fixed;
+  display: none;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  border-radius: 100%;
+  border-style: solid;
+  border-width: thick;
+  border-color: #f05f40;
+  width: 100px;
+  text-align: center;
+  font-family: monospace, monospace;
+  cursor: pointer;
+}
+

@@ -10,6 +10,15 @@ $(document).ready(function() {
       }
     });
   });
+
+  $(window).scroll(function(){
+   if( $(document).scrollTop() > 580 ) {
+      $('.backToTop').show();
+   } else {
+      $('.backToTop').hide();
+   }
+  });
+
 });
 
 function makeDonut(target, data)
