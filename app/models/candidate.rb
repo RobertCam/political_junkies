@@ -1,5 +1,3 @@
-
-
 class Candidate
   attr_reader :name, :id, :picture
   def initialize(name, id, picture)

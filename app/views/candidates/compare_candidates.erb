@@ -1,25 +1,32 @@
-<div class="container-fluid">
-  <div class="row top_row">
-    <form action="/candidates/compare" method="POST"/>
-      <div class="col-sm-5">
-        <div class="btn-group" data-toggle="buttons">
-          <% @candidates.each do |name, cand| %>
-            <label class="btn btn-primary">
-              <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand1"> <%= cand.name %>
-            </label>
-          <% end %>
+
+<style type="text/css">body {
+  background: url("http://carameredith.files.wordpress.com/2014/05/boxing-ring.jpg") no-repeat 50% 50%;
+  background-size: cover;
+  }</style>
+<div class="candidates-wrap">
+  <div class="container-fluid">
+    <div class="row top_row">
+      <form action="/candidates/compare" method="POST"/>
+        <div class="col-sm-5">
+          <div class="btn-group-2" data-toggle="buttons">
+            <% @candidates.each do |name, cand| %>
+              <label class="btn btn-primary">
+                <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand1"> <%= cand.name %>
+              </label><br>
+            <% end %>
+          </div>
         </div>
-      </div>
-      <div class="col-sm-2"><button type="submit" class="btn btn-success">Compare</option></button></div>
-      <div class="col-sm-5"></div>
-       <div class="btn-group" data-toggle="buttons">
-          <% @candidates.each do |name, cand| %>
-            <label class="btn btn-primary">
-              <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2"> <%= cand.name %>
-            </label>
-          <% end %>
+        <div class="col-sm-2"><button type="submit" id="compare-btn" class="btn-lg btn-danger">Compare</option></button></div>
+        <div class="col-sm-5"></div>
+         <div class="btn-group-2" data-toggle="buttons">
+            <% @candidates.each do |name, cand| %>
+              <label class="btn btn-primary">
+                <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2"> <%= cand.name %>
+              </label><br>
+            <% end %>
+          </div>
         </div>
-      </div>
-    </form>
-  </div>
-</div>  
+      </form>
+    </div>
+  </div>  
+</div>

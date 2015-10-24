@@ -8,6 +8,24 @@ li {
   font-size: 16px;
 }
 
+.candidates-wrap {  
+  margin-top: 5%;
+}
+
+#compare-btn {
+  margin-left: 12%;
+  margin-top: 86%;
+}
+
+.btn-group-2 {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 100px;
+  margin-left: 9%;
+
+}
+
 .cand_img_compare {
   border-radius: 20%;
   height: 200px;
@@ -65,6 +83,10 @@ div.sponsors_row {
 .compare_row {
   margin-top: 20%;
   margin-bottom: -10.5%;
+}
+
+.cand-compare-2 {
+  margin-left: 3%;
 }
 
 .compare_background_img {
