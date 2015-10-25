@@ -116,52 +116,52 @@ get '/candidates/compare_candidates' do
 end
 
 post '/candidates/compare' do
-# Candidate one
-  candidate = OpenSecrets::Candidate.new
-  cand_sum = candidate.summary({:cid => params[:cand1]})["response"]
-  @cand_sum = cand_sum["summary"]
-
-  cand_con = candidate.contributors({:cid => params[:cand1]})["response"]
-  @cand_con = cand_con["contributors"]
-  @cand_con_extract = extract_amounts(@cand_con["contributor"])
-
-  cand_ind = candidate.industries({:cid => params[:cand1]})["response"]
-  @cand_ind = cand_ind["industries"]
-  @cand_ind_extract = extract_amounts(@cand_ind["industry"])
-
-  cand_sec = candidate.sector({:cid => params[:cand1]})["response"]
-  @cand_sec = cand_sec["sectors"]
-  @cand_sec_extract = extract_amounts(@cand_sec["sector"])
-
-  image.each do |can, img|
-    if can == params[:cand1].to_s 
-      # fix the logic above to do comparison by the candidate ID rather than name
-      @cand1_img = img
-    end
-  end
   
-# Candidate two 
-  cand2_sum = candidate.summary({:cid => params[:cand2]})["response"]
-  @cand2_sum = cand2_sum["summary"]
+  # Candidate one
+    candidate = OpenSecrets::Candidate.new
+    cand_sum = candidate.summary({:cid => params[:cand1]})["response"]
+    @cand_sum = cand_sum["summary"]
 
-  cand2_con = candidate.contributors({:cid => params[:cand2]})["response"]
-  @cand2_con = cand2_con["contributors"]
-  @cand2_con_extract = extract_amounts(@cand2_con["contributor"])
+    cand_con = candidate.contributors({:cid => params[:cand1]})["response"]
+    @cand_con = cand_con["contributors"]
+    @cand_con_extract = extract_amounts(@cand_con["contributor"])
 
-  cand2_ind = candidate.industries({:cid => params[:cand2]})["response"]
-  @cand2_ind = cand2_ind["industries"]
-  @cand2_ind_extract = extract_amounts(@cand2_ind["industry"])
+    cand_ind = candidate.industries({:cid => params[:cand1]})["response"]
+    @cand_ind = cand_ind["industries"]
+    @cand_ind_extract = extract_amounts(@cand_ind["industry"])
 
-  cand2_sec = candidate.sector({:cid => params[:cand2]})["response"]
-  @cand2_sec = cand2_sec["sectors"]
-  @cand2_sec_extract = extract_amounts(@cand2_sec["sector"])
+    cand_sec = candidate.sector({:cid => params[:cand1]})["response"]
+    @cand_sec = cand_sec["sectors"]
+    @cand_sec_extract = extract_amounts(@cand_sec["sector"])
 
-  image.each do |can, img|
-    if can == params[:cand2].to_s 
-      # fix the logic above to do comparison by the candidate ID rather than name
-      @cand2_img = img
+    image.each do |can, img|
+      if can == params[:cand1].to_s 
+        @cand1_img = img
+      end
     end
-  end
-  erb :'candidates/compare'
+    
+  # Candidate two 
+    cand2_sum = candidate.summary({:cid => params[:cand2]})["response"]
+    @cand2_sum = cand2_sum["summary"]
+
+    cand2_con = candidate.contributors({:cid => params[:cand2]})["response"]
+    @cand2_con = cand2_con["contributors"]
+    @cand2_con_extract = extract_amounts(@cand2_con["contributor"])
+
+    cand2_ind = candidate.industries({:cid => params[:cand2]})["response"]
+    @cand2_ind = cand2_ind["industries"]
+    @cand2_ind_extract = extract_amounts(@cand2_ind["industry"])
+
+    cand2_sec = candidate.sector({:cid => params[:cand2]})["response"]
+    @cand2_sec = cand2_sec["sectors"]
+    @cand2_sec_extract = extract_amounts(@cand2_sec["sector"])
+
+    image.each do |can, img|
+      if can == params[:cand2].to_s 
+        @cand2_img = img
+      end
+    end
+    erb :'candidates/compare'
+
 
 end
