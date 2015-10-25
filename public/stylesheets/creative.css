@@ -196,6 +196,12 @@ header {
     color: black;
 }
 
+.btn-democrat_blue {
+    border-color: #337ab7;
+    background-color: #337ab7;
+    color: #fff;
+}
+
 header .header-content {
     position: relative;
     width: 100%;
