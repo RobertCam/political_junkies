@@ -12,7 +12,7 @@
         <div class="col-sm-5">
           <div class="btn-group-2" data-toggle="buttons">
             <% @candidates.each do |name, cand| %>
-              <% if name == :PELOSI || name == :SANDERS %>
+              <% unless name == :PELOSI || name == :SANDERS %>
                 <label class="btn btn-danger">
                   <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand1"> <%= cand.name %>
                 </label><br>
@@ -29,7 +29,7 @@
         <div class="col-sm-2 relative_cols">
           <div class="btn-group-2 right_compare_buttons" data-toggle="buttons">
             <% @candidates.each do |name, cand| %>
-              <% if name == :PELOSI || name == :SANDERS %>
+              <% unless name == :PELOSI || name == :SANDERS %>
                 <label class="btn btn-danger">
                   <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2"> <%= cand.name %>
                 </label><br>
