@@ -14,11 +14,11 @@
             <% @candidates.each do |name, cand| %>
               <% unless name == :PELOSI || name == :SANDERS %>
                 <label class="btn btn-danger">
-                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand1"> <%= cand.name %>
+                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand1" required> <%= cand.name %>
                 </label><br>
               <% else %>
                  <label class="btn btn-democrat_blue">
-                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand1"> <%= cand.name %>
+                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand1" required> <%= cand.name %>
                 </label><br>
               <% end %>
             <% end %>
@@ -31,11 +31,11 @@
             <% @candidates.each do |name, cand| %>
               <% unless name == :PELOSI || name == :SANDERS %>
                 <label class="btn btn-danger">
-                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2"> <%= cand.name %>
+                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2" required> <%= cand.name %>
                 </label><br>
               <% else %>
                  <label class="btn btn-democrat_blue">
-                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2"> <%= cand.name %>
+                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2" required> <%= cand.name %>
                 </label><br>
               <% end %>
             <% end %>
