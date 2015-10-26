@@ -202,6 +202,44 @@ header {
     color: #fff;
 }
 
+.btn-democrat_blue:hover,
+.btn-democrat_blue:focus,
+.btn-democrat_blue.focus,
+.btn-democrat_blue:active,
+.btn-democrat_blue.active,
+.open > .dropdown-toggle.btn-democrat_blue {
+  color: #fff;
+  background-color: #00B8E6;
+  border-color: #00B8E6;
+}
+.btn-democrat_blue:active,
+.btn-democrat_blue.active,
+.open > .dropdown-toggle.btn-democrat_blue {
+  background-image: none;
+}
+.btn-democrat_blue.disabled,
+.btn-democrat_blue[disabled],
+fieldset[disabled] .btn-democrat_blue,
+.btn-democrat_blue.disabled:hover,
+.btn-democrat_blue[disabled]:hover,
+fieldset[disabled] .btn-democrat_blue:hover,
+.btn-democrat_blue.disabled:focus,
+.btn-democrat_blue[disabled]:focus,
+fieldset[disabled] .btn-democrat_blue:focus,
+.btn-democrat_blue.disabled.focus,
+.btn-democrat_blue[disabled].focus,
+fieldset[disabled] .btn-democrat_blue.focus,
+.btn-democrat_blue.disabled:active,
+.btn-democrat_blue[disabled]:active,
+fieldset[disabled] .btn-democrat_blue:active,
+.btn-democrat_blue.disabled.active,
+.btn-democrat_blue[disabled].active,
+fieldset[disabled] .btn-democrat_blue.active {
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+
+
 header .header-content {
     position: relative;
     width: 100%;
