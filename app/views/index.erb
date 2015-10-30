@@ -38,24 +38,13 @@
     <div class="container">
       <div class="row">
         <% CANDIDATES.each do |name, cand| %>
-          <% unless name == :PELOSI || name == :SANDERS %>
             <div class="col-lg-3 col-md-6 text-center">
-              <a href="/candidates/show/<%= cand.id %>"><img class="cand_profile" src="<%= cand.picture2 %>"></a>
+              <a href="/candidates/show/<%= cand.id %>"><img <% if name == :PELOSI %>class="cand_profile_nancy"<% end %>class="cand_profile" src="<%= cand.picture2 %>"></a>
               <div class ="service-box">
                 <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
-                <a href="/candidates/show/<%= cand.id %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span><h3><%= cand.name %>  </h3></a>
+                <a href="/candidates/show/<%= cand.id %>"><i class="fa fa-fw fa-tag"></i> <span class="badge"><% if name == :PELOSI || name == :SANDERS %>DEM<% else %>REP<% end %></span><h3><%= cand.name %>  </h3></a>
               </div>
             </div>
-          <% else %>
-            <div class="col-lg-3 col-md-6 text-center">
-              <a href="/candidates/show/<%= cand.id %>"><% unless name == :SANDERS %><img class="cand_profile" src="<%= cand.picture2 %>"></a>
-                <div class ="service-box">
-                  <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
-                  <a href="/candidates/show/<%= cand.id %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">DEM</span><h3><%= cand.name %>  </h3></a>
-              </div>
-              <% end %>
-            </div>
-          <% end %>
         <% end %>
       </div>
     </div>

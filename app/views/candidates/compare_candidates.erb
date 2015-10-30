@@ -21,19 +21,19 @@
           <div class="col-sm-2 relative_cols"><button type="submit" id="compare-btn" class="btn-lg btn-success comp_button">Compare</option></button></div>
           <div class="col-sm-3"></div>
           <div class="col-sm-2 relative_cols">
-            <div class="btn-group-2 right_compare_buttons" data-toggle="buttons">
-              <% @candidates.each do |name, cand| %>
-                <% unless name == :PELOSI || name == :SANDERS %>
-                  <label class="btn btn-danger">
-                    <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2" required> <%= cand.name %>
-                  </label><br>
-                <% else %>
-                   <label class="btn btn-democrat_blue">
-                    <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2" required> <%= cand.name %>
-                  </label><br>
-                <% end %>
+          <div class="btn-group-2 right_compare_buttons" data-toggle="buttons">
+            <% @candidates.each do |name, cand| %>
+              <% unless name == :PELOSI || name == :SANDERS %>
+                <label class="btn btn-danger">
+                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2" required> <%= cand.name %>
+                </label><br>
+              <% else %>
+                 <label class="btn btn-democrat_blue">
+                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2" required> <%= cand.name %>
+                </label><br>
               <% end %>
-            </div>
+            <% end %>
+          </div>
           </div>
         </form>
       </div>
