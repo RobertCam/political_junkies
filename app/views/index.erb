@@ -1,91 +1,64 @@
 <body id="page-top">
-
-    <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1>Corporate Hands In Politician's Pockets</h1>
-                <hr>
-                <p>Find which corporations are sponsoring Presidential Candidates.</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Latest News</a><br>
-                <a href="#candidates" class="btn btn-default btn-xl">Check Out a Candidate</a>
+  <header>
+    <div class="header-content">
+      <div class="header-content-inner">
+        <h1>Corporate Hands In Politician's Pockets</h1>
+        <hr>
+        <p>Find which corporations are sponsoring Presidential Candidates.</p>
+        <a href="#about" class="btn btn-primary btn-xl page-scroll">Latest News</a><br>
+        <a href="#candidates" class="btn btn-default btn-xl">Check Out a Candidate</a>
+      </div>
+    </div>
+  </header>
+  <section class="bg-primary" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+          <h2 class="section-heading">Election News</h2>
+          <hr class="light">
+          <div class="col-lg-12 col-md-6 text-center">
+            <div class="result">
+              <p class="text-faded"><div id="searchcontrol" class="gs-result gs-webResult"></div>
+              </p>
             </div>
+          </div>
         </div>
-    </header>
-
-    <section class="bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Election News</h2>
-                    <hr class="light">
-                    <div class="col-lg-12 col-md-6 text-center">
-                        <div class="result">
-                            <p class="text-faded"><div id="searchcontrol" class="gs-result gs-webResult"></div>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+  </section>
+  <section id="candidates">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Candidates</h2>
+          <hr class="primary">
         </div>
-
-    </section>
-
-    <section id="candidates">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Candidates</h2>
-                    <hr class="primary">
-                </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <% CANDIDATES.each do |name, cand| %>
+          <% unless name == :PELOSI || name == :SANDERS %>
+            <div class="col-lg-3 col-md-6 text-center">
+              <a href="/candidates/show/<%= cand.id %>"><img class="cand_profile" src="<%= cand.picture2 %>"></a>
+              <div class ="service-box">
+                <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                <a href="/candidates/show/<%= cand.id %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span><h3><%= cand.name %>  </h3></a>
+              </div>
             </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
-                <a href="/candidates/show/<%= CRUZ %>"><img class="cand_profile" src="https://s3.amazonaws.com/assets.opensecrets.org/pres16/img/squares/cruz_declared.jpg"></a>
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
-                        <a href="/candidates/show/<%= CRUZ %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span><h3>TED CRUZ</h3></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <a href="/candidates/show/<%= GRAHAM %>"><img class="cand_profile" src="https://s3.amazonaws.com/assets.opensecrets.org/pres16/img/squares/graham_declared.jpg"></a>
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <a href="/candidates/show/<%= GRAHAM %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span><h3>LINDSEY GRAHAM</h3></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                <a href="/candidates/show/<%= PAUL %>"><img class="cand_profile" src="https://s3.amazonaws.com/assets.opensecrets.org/pres16/img/squares/paul_declared.jpg"></a>
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <a href="/candidates/show/<%= PAUL %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span><h3>RAND PAUL</h3></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                <a href="/candidates/show/<%= RUBIO %>"><img class="cand_profile" src="https://s3.amazonaws.com/assets.opensecrets.org/pres16/img/squares/rubio_declared.jpg"></a>
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                        <a href="/candidates/show/<%= RUBIO %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">REP</span><h3>MARCO RUBIO</h3></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 text-center">
-                    <a href="/candidates/show/<%= SANDERS %>"><img class="cand_profile" src="https://s3.amazonaws.com/assets.opensecrets.org/pres16/img/squares/sanders_declared.jpg"></a>
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                        <a href="/candidates/show/<%= SANDERS %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">DEM</span><h3>BERNIE SANDERS</h3></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 text-center" style="inline">
-                    <a href="/candidates/show/<%= PELOSI %>"><img class="cand_profile_nancy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzLwrf6qUsfqndNk_FoV-D-ZZ14AX2GYEhRFNUfVfLKiMoJgGF"></a>
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                        <a href="/candidates/show/<%= PELOSI %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">DEM</span><h3>NANCY PELOSI</h3></a>
-                    </div>
-                </div>
+          <% else %>
+            <div class="col-lg-3 col-md-6 text-center">
+              <a href="/candidates/show/<%= cand.id %>"><img class="cand_profile" src="<%= cand.picture2 %>"></a>
+              <div class ="service-box">
+                <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                <a href="/candidates/show/<%= cand.id %>"><i class="fa fa-fw fa-tag"></i> <span class="badge">DEM</span><h3><%= cand.name %>  </h3></a>
+              </div>
             </div>
-        </div><br>
-    </section>
-    <a href="#" class="backToTop">Top</a>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+  <a href="#" class="backToTop">Top</a>
 </body>
-</html>
+
