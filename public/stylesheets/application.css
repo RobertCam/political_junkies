@@ -106,8 +106,6 @@ div.sponsors_row {
   margin-left: 3%;
 }
 
-
-
 .compare_background_img {
   background: url("../img/repub_vs_democrat_blur.jpg") no-repeat 50% 50% fixed; 
   background-size: cover;
@@ -116,6 +114,15 @@ div.sponsors_row {
   -webkit-background-size: cover;
   color: rgb(0,0,0,0.9);
 }
+
+.compare_landing {
+  background: url("../img/boxing_ring.jpg") no-repeat 50% 50% fixed; 
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+}
+
 
 .sponsor_header {
   font-size: 45px;

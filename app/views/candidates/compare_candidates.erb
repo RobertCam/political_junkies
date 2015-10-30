@@ -1,47 +1,42 @@
-<link rel="stylesheet" href="/stylesheets/creative.css" type="text/css">
-<style type="text/css">body {
-  background: url("../img/boxing_ring.jpg") no-repeat 50% 50%;
-  background-size: cover;
-  }
-</style>
-
-<div class="candidates-wrap">
-  <div class="container-fluid">
-    <div class="row top_row">
-      <form action="/candidates/compare" method="POST"/>
-        <div class="col-sm-5">
-          <div class="btn-group-2" data-toggle="buttons">
-            <% @candidates.each do |name, cand| %>
-              <% unless name == :PELOSI || name == :SANDERS %>
-                <label class="btn btn-danger">
-                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand1" required> <%= cand.name %>
-                </label><br>
-              <% else %>
-                 <label class="btn btn-democrat_blue">
-                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand1" required> <%= cand.name %>
-                </label><br>
+<body class = "compare_landing">
+  <div class="candidates-wrap">
+    <div class="container-fluid">
+      <div class="row top_row">
+        <form action="/candidates/compare" method="POST"/>
+          <div class="col-sm-5">
+            <div class="btn-group-2" data-toggle="buttons">
+              <% @candidates.each do |name, cand| %>
+                <% unless name == :PELOSI || name == :SANDERS %>
+                  <label class="btn btn-danger">
+                    <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand1" required> <%= cand.name %>
+                  </label><br>
+                <% else %>
+                   <label class="btn btn-democrat_blue">
+                    <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand1" required> <%= cand.name %>
+                  </label><br>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
-        </div>
-        <div class="col-sm-2 relative_cols"><button type="submit" id="compare-btn" class="btn-lg btn-success comp_button">Compare</option></button></div>
-        <div class="col-sm-3"></div>
-        <div class="col-sm-2 relative_cols">
-          <div class="btn-group-2 right_compare_buttons" data-toggle="buttons">
-            <% @candidates.each do |name, cand| %>
-              <% unless name == :PELOSI || name == :SANDERS %>
-                <label class="btn btn-danger">
-                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2" required> <%= cand.name %>
-                </label><br>
-              <% else %>
-                 <label class="btn btn-democrat_blue">
-                  <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2" required> <%= cand.name %>
-                </label><br>
+          <div class="col-sm-2 relative_cols"><button type="submit" id="compare-btn" class="btn-lg btn-success comp_button">Compare</option></button></div>
+          <div class="col-sm-3"></div>
+          <div class="col-sm-2 relative_cols">
+            <div class="btn-group-2 right_compare_buttons" data-toggle="buttons">
+              <% @candidates.each do |name, cand| %>
+                <% unless name == :PELOSI || name == :SANDERS %>
+                  <label class="btn btn-danger">
+                    <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2" required> <%= cand.name %>
+                  </label><br>
+                <% else %>
+                   <label class="btn btn-democrat_blue">
+                    <input type="radio" autocomplete="off" value="<%= cand.id %>" name="cand2" required> <%= cand.name %>
+                  </label><br>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
-        </div>
-      </form>
-    </div>
-  </div>  
-</div>
+        </form>
+      </div>
+    </div>  
+  </div>
+</body>
